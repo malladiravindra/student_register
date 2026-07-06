@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #eef2f7;
+    color: #2b3a4b;
+    margin: 0;
+    padding: 0;
+    /* background-image: url("https://static.vecteezy.com/system/resources/previews/047/785/453/original/cartoon-school-with-red-roof-yellow-exterior-large-windows-front-entrance-walkway-green-trees-bushes-blue-sky-white-clouds-free-vector.jpg"); */
+    background-size: cover;        
+    background-position: center;  
+    background-repeat: no-repeat;
+    height: 100vh;                 
+    margin: 0; 
+}
+
+.container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 80px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(5, 20, 56, 0.08);
+}
+
+h1{
+    margin: -1px 0 18px;
+    padding: 16px 12px;
+    color: #1f2937;
+}
+input{
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 18px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 16px;
+}
+button{
+    width: 100%;
+    padding: 12px 20px;
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+button:hover{
+    background: #2563eb;
+}

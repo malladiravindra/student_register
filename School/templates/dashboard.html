@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'School/dashboard.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, {{ teacher.name }}</h1>
+        <h2>Attendance for {{ date }}</h2>
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="message {{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <div class="stats">
+            <p><strong>Total Students:</strong> {{ total_students }}</p>
+            <p><strong>Present:</strong> {{ present_students }}</p>
+            <p><strong>Absent:</strong> {{ absent_students }}</p>
+        </div>
+
+    <h3>Present Students</h3>
+    {% if present_students_list %}
+        <table class="attendance-table">
+            <thead>
+                <tr>
+                    <th>Roll Number</th>
+                    <th>Name</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in present_students_list %}
+                    <tr>
+                        <td>{{ row.roll_number }}</td>
+                        <td>{{ row.name }}</td>
+                        <td class="status-present">{{ row.status }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No students are marked present today.</p>
+    {% endif %}
+
+    <h3>All Students Attendance</h3>
+    <form method="post">
+        {% csrf_token %}
+        <table class="attendance-table">
+            <thead>
+                <tr>
+                    <th>Roll Number</th>
+                    <th>Name</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in student_rows %}
+                    <tr>
+                        <td>{{ row.roll_number }}</td>
+                        <td>{{ row.name }}</td>
+                        <td>
+                            <select name="attendance_{{ row.student.id }}">
+                                <option value="present" {% if row.is_present %}selected{% endif %}>Present</option>
+                                <option value="absent" {% if not row.is_present %}selected{% endif %}>Absent</option>
+                            </select>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <b>
+            <button type="submit" class="save-button">Save Attendance</button>
+        </b>
+    </form>
+
+    <a class="logout-link" href="{% url 'logout' %}">Logout</a>
+    </div>
+</body>
+</html>

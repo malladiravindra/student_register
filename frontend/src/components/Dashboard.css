@@ -1,0 +1,103 @@
+.dashboard-container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 1rem;
+}
+
+.dashboard-header h1 {
+  color: #333;
+  margin: 0;
+}
+
+.logout-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b;
+}
+
+.attendance-summary h2 {
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  flex: 1;
+  margin: 0 0.5rem;
+  border: 2px solid #ddd;
+}
+
+.stat-card.present {
+  border-color: #27ae60;
+  background-color: #d5f4e6;
+}
+
+.stat-card.absent {
+  border-color: #e74c3c;
+  background-color: #fadbd8;
+}
+
+.stat-card h3 {
+  margin: 0 0 0.5rem 0;
+  color: #555;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  color: #333;
+}
+
+.student-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.student-list li {
+  padding: 0.5rem;
+  margin-bottom: 0.25rem;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+}
+
+.student-list li.present {
+  background-color: #d5f4e6;
+  border-left: 4px solid #27ae60;
+}
+
+.student-list li.absent {
+  background-color: #fadbd8;
+  border-left: 4px solid #e74c3c;
+}
